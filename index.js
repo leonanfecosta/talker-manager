@@ -5,6 +5,13 @@ const getTalkersById = require('./middlewares/getTalkersById');
 const login = require('./middlewares/login');
 const validateEmail = require('./middlewares/validateEmail');
 const validatePassword = require('./middlewares/validatePassword');
+const validateToken = require('./middlewares/validateToken');
+const validateName = require('./middlewares/validateName');
+const validateAge = require('./middlewares/validateAge');
+const validateTalk = require('./middlewares/validateTalk');
+const validateWatchedAt = require('./middlewares/validateWatchedAt');
+const validateRate = require('./middlewares/validateRate');
+const validateTalker = require('./middlewares/validateTalker');
 
 const app = express();
 app.use(bodyParser.json());
@@ -19,7 +26,16 @@ app.get('/', (_request, response) => {
 
 app.get('/talker', getTalkers);
 app.get('/talker/:id', getTalkersById);
-
+app.post(
+  '/talker',
+  validateToken,
+  validateName,
+  validateAge,
+  validateTalk,
+  validateWatchedAt,
+  validateRate,
+  validateTalker,
+);
 app.post('/login', validateEmail, validatePassword, login);
 
 app.listen(PORT, () => {
