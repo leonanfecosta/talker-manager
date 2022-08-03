@@ -12,6 +12,7 @@ const validateTalk = require('./middlewares/validateTalk');
 const validateWatchedAt = require('./middlewares/validateWatchedAt');
 const validateRate = require('./middlewares/validateRate');
 const validateTalker = require('./middlewares/validateTalker');
+const validateTalkerId = require('./middlewares/validateTalkerId');
 
 const app = express();
 app.use(bodyParser.json());
@@ -35,6 +36,16 @@ app.post(
   validateWatchedAt,
   validateRate,
   validateTalker,
+);
+app.put(
+  '/talker/:id',
+  validateToken,
+  validateName,
+  validateAge,
+  validateTalk,
+  validateWatchedAt,
+  validateRate,
+  validateTalkerId,
 );
 app.post('/login', validateEmail, validatePassword, login);
 

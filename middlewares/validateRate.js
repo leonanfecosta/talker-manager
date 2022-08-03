@@ -1,7 +1,6 @@
 const validateRate = (req, res, next) => {
-  try {
     const { talk: { rate } } = req.body;
-    if (!rate) {
+    if (!rate && rate !== 0) {
       return res.status(400).json({
         message: 'O campo "rate" é obrigatório',
       });
@@ -12,9 +11,6 @@ const validateRate = (req, res, next) => {
       });
     }
     return next();
-  } catch (error) {
-    return next();
-  }
 };
 
 module.exports = validateRate; 
