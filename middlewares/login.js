@@ -1,10 +1,9 @@
 const generateToken = require('../helpers/generateToken');
 
-const login = (req, res) => {
-  const { email, password } = req.body;
-  console.log(email, password);
+const login = (_req, res, next) => {
   const token = generateToken();
-  return res.status(200).json(token);
+  res.status(200).json(token);
+  return next();
 };
 
 module.exports = login;
