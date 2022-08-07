@@ -8,13 +8,15 @@ Aqui você vai encontrar os detalhes de como foi o desenvolvimento do projeto e 
 
 # Habilidades desenvolvidas
 
+Foi proposto a criação de uma aplicação de cadastro de talkers (palestrantes) onde será possível cadastrar, visualizar, pesquisar, editar e excluir informações. Para isso foi necessário:
+
+- Desenvolver uma API de um CRUD (Create, Read, Update e Delete) de palestrantes (talkers) e;
+- Desenvolver alguns endpoints que irão ler e escrever em um arquivo utilizando o módulo fs.
+
 Neste projeto, fui capaz de:
 
 - Ler e escrever arquivos localmente com NodeJS;
 - Escrever seus próprios scripts que criam e consomem Promises;
-- Reescrever código que usa callbacks para que use Promises;
-- Detectar e solucionar problemas no código de forma mais objetiva;
-- Entender o que é o HTTP, o que é uma API e o que os dois têm a ver com o Express;
 - Escrever APIs utilizando Node e Express;
 - Entender a estrutura de uma aplicação Express e como organizar seu código;
 - Criar rotas e aplicar middlewares.
